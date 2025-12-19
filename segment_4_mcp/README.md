@@ -24,4 +24,4 @@ docker build -t mcp-database .
 docker run -p 3000:3000 mcp-database
 ```
 
-→ See [Main Project](../projects/ai_dev_team/README.md)
+See [Main Project](../projects/ai_dev_team/README.md)

@@ -1,6 +1,7 @@
 # Exercise: Design Your Agent Workflow
 
 **Time**: 10-15 minutes
+
 **Objective**: Apply the concepts from Segment 1 to design an agent workflow for a use case relevant to your work.
 
 ## Instructions
@@ -14,22 +15,16 @@ Think of a task in your work that might benefit from an agent-based approach. Us
 **Task Name**: _________________________________
 
 **Description**:
-_What does this task accomplish? Who benefits?_
 
-
-
+*What does this task accomplish? Who benefits?*
 
 **Current Approach**:
-_How is this done today? (Manual, scripted, not done at all?)_
 
-
-
+*How is this done today? (Manual, scripted, not done at all?)*
 
 **Why Consider an Agent?**
-_What makes you think an agent might help?_
 
-
-
+*What makes you think an agent might help?*
 
 ---
 
@@ -49,6 +44,7 @@ Using the framework from `01_what_is_an_agent.py`, evaluate:
 **Autonomy Score**: ___/6
 
 **Recommended Approach**:
+
 - [ ] Traditional automation
 - [ ] Single LLM call
 - [ ] Chain of LLM calls
@@ -61,24 +57,24 @@ Using the framework from `01_what_is_an_agent.py`, evaluate:
 
 Draw or describe your workflow:
 
-```
+```text
 START
   │
   ▼
 ┌─────────────┐
-│   Node 1    │  ← What happens here?
+│   Node 1    │  <- What happens here?
 │             │
 └──────┬──────┘
        │
        ▼
 ┌─────────────┐
-│   Node 2    │  ← What happens here?
+│   Node 2    │  <- What happens here?
 │             │
 └──────┬──────┘
        │
        ▼
 ┌─────────────┐
-│   Node 3    │  ← What happens here?
+│   Node 3    │  <- What happens here?
 │             │
 └──────┬──────┘
        │
@@ -175,9 +171,6 @@ Using the framework from `05_cost_analysis.py`:
 
 **Is this cost justified?** Why or why not?
 
-
-
-
 ---
 
 ## Part 8: Final Recommendation
@@ -190,9 +183,6 @@ Based on your analysis:
 - [ ] **Need more research** - Unclear if agent will work
 
 **Rationale**:
-
-
-
 
 ---
 

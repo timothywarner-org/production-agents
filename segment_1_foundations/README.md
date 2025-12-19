@@ -28,30 +28,30 @@ By the end of this segment, you will:
 
 ### What Makes a True Agent?
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    CHATBOT vs AGENT                             │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
 │   CHATBOT (Prompted LLM)          AUTONOMOUS AGENT              │
 │   ────────────────────           ────────────────               │
-│   • Single turn                  • Multi-turn with memory       │
-│   • Stateless                    • Stateful (persists context)  │
-│   • Human drives flow            • Agent drives flow            │
-│   • No tool use                  • Dynamic tool selection       │
-│   • Responds to prompts          • Plans and executes           │
+│   - Single turn                  - Multi-turn with memory       │
+│   - Stateless                    - Stateful (persists context)  │
+│   - Human drives flow            - Agent drives flow            │
+│   - No tool use                  - Dynamic tool selection       │
+│   - Responds to prompts          - Plans and executes           │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
 ### The Agent Loop
 
-```
+```text
         ┌──────────────────────────────────────┐
         │                                      │
         ▼                                      │
     ┌───────┐      ┌───────┐      ┌───────┐   │
-    │OBSERVE│ ──▶  │ THINK │ ──▶  │  ACT  │ ──┘
+    │OBSERVE│ ──►  │ THINK │ ──►  │  ACT  │ ──┘
     └───────┘      └───────┘      └───────┘
         │              │              │
         │              │              │
@@ -64,7 +64,7 @@ By the end of this segment, you will:
 
 ```python
 # State flows through the graph
-State ─▶ [Node A] ─▶ [Node B] ─▶ [Node C] ─▶ Result
+State -> [Node A] -> [Node B] -> [Node C] -> Result
               │           │
               └───────────┘
               (conditional edge)
@@ -92,6 +92,7 @@ See `exercises/design_your_workflow.md` for the exercise template.
 **Task**: Sketch an agent workflow for a use case relevant to your work.
 
 Consider:
+
 - What's the input/trigger?
 - What decisions does the agent need to make?
 - What tools does it need access to?
@@ -109,4 +110,4 @@ Consider:
 
 After mastering these foundations, we'll dive deep into LangGraph's advanced features: complex graphs with conditional edges, state persistence, and human-in-the-loop patterns.
 
-→ Continue to [Segment 2: LangGraph Deep Dive](../segment_2_langgraph/README.md)
+Continue to [Segment 2: LangGraph Deep Dive](../segment_2_langgraph/README.md)

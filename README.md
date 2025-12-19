@@ -1,14 +1,21 @@
 # Build Production-Ready AI Agents
 
-[![O'Reilly Live Learning](https://img.shields.io/badge/O'Reilly-Live%20Learning-red)](https://learning.oreilly.com/)
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![LangGraph](https://img.shields.io/badge/LangGraph-1.0+-green.svg)](https://www.langchain.com/langgraph)
-[![CrewAI](https://img.shields.io/badge/CrewAI-latest-purple.svg)](https://www.crewai.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Build Production-Ready AI Agents cover](images/production-agents-cover.png)
 
-**O'Reilly Live Learning Session | January 12, 2026 | 9am-1pm CST**
+[![Website TechTrainerTim.com](https://img.shields.io/badge/Website-TechTrainerTim.com-0a66c2)](https://techtrainertim.com) [![GitHub timothywarner-org](https://img.shields.io/badge/GitHub-timothywarner--org-181717?logo=github)](https://github.com/timothywarner-org) [![Python 3.11+](https://img.shields.io/badge/Python-3.11+-3776ab?logo=python&logoColor=white)](https://www.python.org/downloads/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Production-ready AI agents go beyond chatbots—they plan, execute, maintain state, and make decisions independently. This course teaches you to build autonomous agents using the enterprise stack that's actually shipping: **LangGraph** for stateful orchestration, **CrewAI** for multi-agent collaboration, and **Claude's Model Context Protocol (MCP)** for universal tool connectivity.
+**O'Reilly Live Learning Course** | 4 Hours | LangGraph + CrewAI + MCP
+
+Production-ready AI agents go beyond chatbots—they plan, execute, maintain state, and make decisions independently. Build autonomous agents using the enterprise stack that's actually shipping: **LangGraph** for stateful orchestration, **CrewAI** for multi-agent collaboration, and **Claude's Model Context Protocol (MCP)** for universal tool connectivity.
+
+## Course Overview
+
+| Segment | Focus | Difficulty | Key Skills |
+|---------|-------|------------|------------|
+| Segment 1 | Agents vs "Agents" - Foundations | Intro | True agents vs chatbots, LangGraph basics, state management, cost analysis |
+| Segment 2 | LangGraph Deep Dive | Intermediate | Complex graphs, state persistence, checkpointing, human-in-the-loop |
+| Segment 3 | Multi-Agent Orchestration | Intermediate | CrewAI roles, delegation, collaboration patterns, conflict resolution |
+| Segment 4 | MCP Servers & Production | Advanced | MCP architecture, tool connectivity, production concerns, evaluation |
 
 ## What You'll Build
 
@@ -20,132 +27,74 @@ A working **AI Software Development Team** with three collaborating agents:
 | **Developer** | Implementation | Writes code, follows patterns, handles edge cases |
 | **QA Tester** | Quality Assurance | Reviews code, writes tests, validates functionality |
 
-These agents collaborate to complete real software development tasks—not toy demos.
-
-## Learning Objectives
-
-By the end of this course, you'll be able to:
-
-- Design and deploy **stateful agents** using LangGraph's workflow engine
-- Orchestrate **multi-agent systems** with CrewAI for collaborative problem-solving
-- Build **MCP servers** to connect agents to databases, APIs, and tools
-- Evaluate **agent ROI** with a framework for when to use agents vs. traditional automation
-
 ## Prerequisites
 
-| Requirement | Details |
-|-------------|---------|
-| **Python** | 3.11+ with async/await proficiency |
-| **LLM Fundamentals** | Experience with ChatGPT, Claude, or similar |
-| **Command Line** | Comfortable with pip, venv, environment variables |
-| **API Experience** | REST endpoints and JSON |
+- Python 3.11+ with async/await proficiency
+- Experience with ChatGPT, Claude, or similar LLMs
+- Comfortable with pip, venv, environment variables
+- Basic REST API and JSON knowledge
 
-## Quick Start
+**Required API keys:**
 
-### 1. Clone and Setup
-
-```bash
-git clone https://github.com/timothywarner-org/production-agents.git
-cd production-agents
-
-# Create virtual environment
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### 2. Configure Environment
-
-```bash
-cp .env.example .env
-# Edit .env with your API keys
-```
-
-Required API keys:
-- `ANTHROPIC_API_KEY` - Claude API (Pro account recommended)
-- `OPENAI_API_KEY` - For comparison demos
-
-### 3. Verify Installation
-
-```bash
-python -m scripts.verify_setup
-```
+| Resource | URL | Notes |
+|----------|-----|-------|
+| Anthropic API | <https://console.anthropic.com/> | Claude API (Pro account recommended) |
+| OpenAI API | <https://platform.openai.com/> | For comparison demos |
 
 ## Repository Structure
 
-```
+```text
 production-agents/
-├── README.md
-├── requirements.txt
-├── pyproject.toml
-├── .env.example
+├── README.md                           # This file
+├── CLAUDE.md                           # Claude Code instructions
+├── requirements.txt                    # Python dependencies
+├── pyproject.toml                      # Project configuration
+├── .env.example                        # Environment template
 │
-├── segment_1_foundations/          # Agents vs "Agents" - Architecture
-│   ├── README.md
-│   ├── 01_what_is_an_agent.py      # True agents vs prompted chatbots
-│   ├── 02_langgraph_basics.py      # Nodes, edges, state management
-│   ├── 03_first_stateful_agent.py  # Demo: Agent with memory
-│   ├── 04_crewai_intro.py          # Role-based agents introduction
-│   ├── 05_cost_analysis.py         # When agents are worth it
+├── segment_1_foundations/              # Agents vs "Agents" - Architecture
+│   ├── 01_what_is_an_agent.py          # True agents vs prompted chatbots
+│   ├── 02_langgraph_basics.py          # Nodes, edges, state management
+│   ├── 03_first_stateful_agent.py      # Demo: Agent with memory
+│   ├── 04_crewai_intro.py              # Role-based agents introduction
+│   ├── 05_cost_analysis.py             # When agents are worth it
 │   └── exercises/
-│       └── design_your_workflow.md
 │
-├── segment_2_langgraph/            # LangGraph Deep Dive
-│   ├── README.md
-│   ├── 01_complex_graphs.py        # Conditional edges and loops
-│   ├── 02_state_persistence.py     # Checkpointing for long-running agents
-│   ├── 03_code_review_agent.py     # Demo: Context across files
-│   ├── 04_error_handling.py        # Fallback strategies
-│   ├── 05_human_in_loop.py         # Critical decision patterns
+├── segment_2_langgraph/                # LangGraph Deep Dive
+│   ├── 01_complex_graphs.py            # Conditional edges and loops
+│   ├── 02_state_persistence.py         # Checkpointing for durability
+│   ├── 03_code_review_agent.py         # Demo: Context across files
+│   ├── 04_error_handling.py            # Fallback strategies
+│   ├── 05_human_in_loop.py             # Critical decision patterns
 │   └── exercises/
-│       └── add_state_management.py
 │
-├── segment_3_crewai/               # Multi-Agent Orchestration
-│   ├── README.md
-│   ├── 01_specialized_agents.py    # PM, Developer, QA Tester roles
-│   ├── 02_communication.py         # Agent delegation strategies
-│   ├── 03_software_team_demo.py    # End-to-end feature completion
-│   ├── 04_conflict_resolution.py   # Managing contradictions
-│   ├── 05_parallel_execution.py    # Performance optimization
+├── segment_3_crewai/                   # Multi-Agent Orchestration
+│   ├── 01_specialized_agents.py        # PM, Developer, QA roles
+│   ├── 02_communication.py             # Delegation strategies
+│   ├── 03_software_team_demo.py        # End-to-end feature completion
+│   ├── 04_conflict_resolution.py       # Managing contradictions
+│   ├── 05_parallel_execution.py        # Performance optimization
 │   └── exercises/
-│       └── two_agent_collab.py
 │
-├── segment_4_mcp/                  # MCP Servers & Production
-│   ├── README.md
-│   ├── 01_mcp_architecture.py      # Universal tool protocol
-│   ├── 02_database_server/         # Demo: MCP for database access
-│   │   ├── server.py
-│   │   ├── Dockerfile
-│   │   └── README.md
-│   ├── 03_github_integration.py    # Connecting to GitHub
-│   ├── 04_slack_integration.py     # Connecting to Slack
-│   ├── 05_production_concerns.py   # Rate limits, costs, monitoring
-│   ├── 06_evaluation_framework.py  # Metrics that matter
-│   ├── 07_antipatterns.py          # When NOT to use agents
+├── segment_4_mcp/                      # MCP Servers & Production
+│   ├── 01_mcp_architecture.py          # Universal tool protocol
+│   ├── 02_database_server/             # Demo: MCP for database access
+│   ├── 03_github_integration.py        # Connecting to GitHub
+│   ├── 04_slack_integration.py         # Connecting to Slack
+│   ├── 05_production_concerns.py       # Rate limits, costs, monitoring
+│   ├── 06_evaluation_framework.py      # Metrics that matter
+│   ├── 07_antipatterns.py              # When NOT to use agents
 │   └── exercises/
-│       └── architecture_review.md
 │
 ├── projects/
-│   └── ai_dev_team/                # Main Course Project
-│       ├── README.md
-│       ├── agents/
-│       │   ├── product_manager.py
-│       │   ├── developer.py
-│       │   └── qa_tester.py
-│       ├── workflows/
-│       │   ├── feature_workflow.py
-│       │   └── bug_fix_workflow.py
-│       ├── mcp_servers/
-│       │   ├── github_server/
-│       │   └── code_analysis_server/
+│   └── ai_dev_team/                    # Main Course Project
+│       ├── agents/                     # PM, Developer, QA implementations
+│       ├── workflows/                  # Feature and bug fix workflows
+│       ├── mcp_servers/                # GitHub and code analysis servers
 │       └── examples/
-│           └── complete_feature_request.py
 │
 ├── scripts/
-│   ├── verify_setup.py             # Verify installation
-│   └── cost_calculator.py          # Estimate API costs
+│   ├── verify_setup.py                 # Verify installation
+│   └── cost_calculator.py              # Estimate API costs
 │
 ├── docker/
 │   ├── docker-compose.yml
@@ -157,58 +106,92 @@ production-agents/
     └── ARCHITECTURE.md
 ```
 
-## Course Schedule
+## Quick Start
 
-### Segment 1: Agents vs "Agents" - Foundations (50 min)
+1. **Clone the repository**
 
-| Topic | File | Description |
-|-------|------|-------------|
-| What makes a true agent | `01_what_is_an_agent.py` | Autonomous agents vs prompted chatbots |
-| LangGraph fundamentals | `02_langgraph_basics.py` | Nodes, edges, state management |
-| **Demo**: First stateful agent | `03_first_stateful_agent.py` | Agent with memory and decisions |
-| CrewAI introduction | `04_crewai_intro.py` | Role-based agents and delegation |
-| Cost reality check | `05_cost_analysis.py` | When agents are worth the investment |
+   ```bash
+   git clone https://github.com/timothywarner-org/production-agents.git
+   cd production-agents
+   ```
 
-**Exercise**: Design an agent workflow for your use case
+2. **Create virtual environment and install dependencies**
 
-### Segment 2: LangGraph Deep Dive (50 min)
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
 
-| Topic | File | Description |
-|-------|------|-------------|
-| Complex graphs | `01_complex_graphs.py` | Conditional edges and loops |
-| State persistence | `02_state_persistence.py` | Checkpointing for durability |
-| **Demo**: Code review agent | `03_code_review_agent.py` | Context across multiple files |
-| Error handling | `04_error_handling.py` | Fallback strategies |
-| Human-in-the-loop | `05_human_in_loop.py` | Patterns for critical decisions |
+3. **Configure environment and verify**
 
-**Exercise**: Add state management to a basic agent
+   ```bash
+   cp .env.example .env
+   # Edit .env with your API keys
+   python -m scripts.verify_setup
+   ```
 
-### Segment 3: Multi-Agent Orchestration with CrewAI (50 min)
+## Segment Summaries
 
-| Topic | File | Description |
-|-------|------|-------------|
-| Specialized agents | `01_specialized_agents.py` | PM, Developer, QA roles |
-| Communication | `02_communication.py` | Delegation strategies |
-| **Demo**: Software team | `03_software_team_demo.py` | End-to-end feature completion |
-| Conflict resolution | `04_conflict_resolution.py` | Managing agent disagreements |
-| Performance | `05_parallel_execution.py` | Parallel vs sequential |
+### Segment 1: Agents vs "Agents" - Foundations
 
-**Exercise**: Build a two-agent collaboration
+**Scenario:** Understand what separates true autonomous agents from prompted chatbots
 
-### Segment 4: MCP Servers & Production (50 min)
+**What you'll learn:**
 
-| Topic | File | Description |
-|-------|------|-------------|
-| MCP architecture | `01_mcp_architecture.py` | Universal tool protocol |
-| **Demo**: Database MCP | `02_database_server/` | Connect agents to data |
-| GitHub integration | `03_github_integration.py` | Real-world connectivity |
-| Production concerns | `05_production_concerns.py` | Rate limits, costs, monitoring |
-| Evaluation framework | `06_evaluation_framework.py` | Metrics that matter |
-| Antipatterns | `07_antipatterns.py` | When NOT to use agents |
+- The agent architecture spectrum (chatbots to fully autonomous)
+- LangGraph fundamentals: nodes, edges, state
+- When agents are worth the investment (cost analysis)
+- Your first stateful agent with memory
 
-**Exercise**: Architecture review of complete system
+**Skills:** Agent architecture, LangGraph basics, cost-benefit analysis
 
-## Key Concepts
+---
+
+### Segment 2: LangGraph Deep Dive
+
+**Scenario:** Build complex, production-grade agent workflows
+
+**What you'll learn:**
+
+- Conditional edges and looping patterns
+- State persistence with checkpointing
+- Error handling and fallback strategies
+- Human-in-the-loop for critical decisions
+
+**Skills:** Complex graphs, checkpointing, error handling, human oversight
+
+---
+
+### Segment 3: Multi-Agent Orchestration with CrewAI
+
+**Scenario:** Orchestrate multiple specialized agents working together
+
+**What you'll learn:**
+
+- Role-based agent design (PM, Developer, QA)
+- Communication and delegation strategies
+- Managing agent disagreements
+- Parallel vs sequential execution
+
+**Skills:** CrewAI roles, delegation patterns, conflict resolution
+
+---
+
+### Segment 4: MCP Servers & Production
+
+**Scenario:** Connect agents to real-world tools and prepare for production
+
+**What you'll learn:**
+
+- MCP architecture and universal tool protocol
+- Building database, GitHub, and Slack integrations
+- Production concerns: rate limits, costs, monitoring
+- Evaluation framework and antipatterns
+
+**Skills:** MCP servers, tool integration, production deployment, evaluation
+
+## Key Code Examples
 
 ### LangGraph: Stateful Workflows
 
@@ -283,7 +266,7 @@ async def get_schema(table: str) -> str:
     return await fetch_schema(table)
 ```
 
-## Decision Framework: When to Use Agents
+## Decision Framework
 
 | Use Case | Agent? | Why |
 |----------|--------|-----|
@@ -292,6 +275,34 @@ async def get_schema(table: str) -> str:
 | Simple, predictable workflows | No | Traditional automation is cheaper |
 | High-stakes with no review | No | Agents need human oversight |
 | One-off data transformation | No | Scripts are more efficient |
+
+## Learning Resources
+
+### Agent Frameworks
+
+- [LangGraph Documentation](https://langchain-ai.github.io/langgraph/)
+- [CrewAI Documentation](https://docs.crewai.com/)
+- [Model Context Protocol](https://modelcontextprotocol.io/)
+- [Anthropic API Reference](https://docs.anthropic.com/)
+
+### Related O'Reilly Content
+
+- [How to Prompt Like a Pro](https://learning.oreilly.com/) — Tim Warner
+- [AI Agents at Work](https://learning.oreilly.com/) — Shaun Wassell
+- [AI Catalyst: Enterprise Agent Deployments](https://learning.oreilly.com/) — Jon Krohn
+
+## Course Schedule
+
+| Time | Activity |
+|------|----------|
+| 0:00 - 0:50 | Segment 1: Agents vs "Agents" - Foundations |
+| 0:50 - 1:00 | Q&A + Break |
+| 1:00 - 1:50 | Segment 2: LangGraph Deep Dive |
+| 1:50 - 2:00 | Q&A + Break |
+| 2:00 - 2:50 | Segment 3: Multi-Agent Orchestration with CrewAI |
+| 2:50 - 3:00 | Q&A + Break |
+| 3:00 - 3:50 | Segment 4: MCP Servers & Production |
+| 3:50 - 4:00 | Wrap-up, resources, next steps |
 
 ## Troubleshooting
 
@@ -310,30 +321,18 @@ pip install --upgrade langgraph crewai anthropic
 docker-compose logs mcp-server
 ```
 
-## Resources
-
-### Official Documentation
-- [LangGraph Documentation](https://langchain-ai.github.io/langgraph/)
-- [CrewAI Documentation](https://docs.crewai.com/)
-- [Model Context Protocol](https://modelcontextprotocol.io/)
-- [Anthropic API Reference](https://docs.anthropic.com/)
-
-### Related O'Reilly Content
-- [How to Prompt Like a Pro](https://learning.oreilly.com/) - Tim Warner
-- [AI Agents at Work](https://learning.oreilly.com/) - Shaun Wassell
-- [AI Catalyst: Enterprise Agent Deployments](https://learning.oreilly.com/) - Jon Krohn
-
 ## Instructor
 
-**Tim Warner** - Microsoft MVP in Azure AI and Cloud/Datacenter Management (6 years), Microsoft Certified Trainer (25+ years)
+**Tim Warner** — Microsoft MVP (Azure AI and Cloud/Datacenter Management), Microsoft Certified Trainer (25+ years)
 
 - [LinkedIn](https://www.linkedin.com/in/intrepidtechie/)
-- [GitHub](https://github.com/timothywarner-org)
+- [Website](https://techtrainertim.com/)
+- [O'Reilly Author Page](https://learning.oreilly.com/search/?query=Tim%20Warner)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - See [LICENSE](./LICENSE) for details.
 
 ---
 
-**Ready to build production-ready agents?** Start with [Segment 1](segment_1_foundations/README.md) or dive into the [AI Dev Team project](projects/ai_dev_team/README.md).
+**Questions?** Open an issue or reach out via the course chat during live sessions.

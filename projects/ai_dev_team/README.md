@@ -4,7 +4,7 @@ The main course project: A complete multi-agent system with PM, Developer, and Q
 
 ## Architecture
 
-```
+```text
 ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
 │   Product   │────►│  Developer  │────►│     QA      │
 │   Manager   │     │             │     │   Tester    │

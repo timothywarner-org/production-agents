@@ -21,4 +21,4 @@ python -m segment_3_crewai.01_specialized_agents
 python -m segment_3_crewai.03_software_team_demo
 ```
 
-→ Continue to [Segment 4: MCP & Production](../segment_4_mcp/README.md)
+Continue to [Segment 4: MCP & Production](../segment_4_mcp/README.md)

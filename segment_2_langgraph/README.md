@@ -21,4 +21,4 @@ python -m segment_2_langgraph.01_complex_graphs
 python -m segment_2_langgraph.03_code_review_agent
 ```
 
-→ Continue to [Segment 3: CrewAI](../segment_3_crewai/README.md)
+Continue to [Segment 3: CrewAI](../segment_3_crewai/README.md)
