@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  # MCP Database Server
+  mcp-database:
+    build:
+      context: ../segment_4_mcp/02_database_server
+      dockerfile: Dockerfile
+    volumes:
+      - db-data:/data
+    environment:
+      - DATABASE_PATH=/data/demo.db
+    ports:
+      - "3001:3000"
+
+  # PostgreSQL for production deployments
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: agents
+      POSTGRES_PASSWORD: agents_dev
+      POSTGRES_DB: agents_db
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  db-data:
+  postgres-data:
